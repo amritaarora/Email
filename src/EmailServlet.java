@@ -1,4 +1,5 @@
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,12 +21,14 @@ public class EmailServlet extends HttpServlet{
                       HttpServletResponse response)
             throws ServletException, IOException
     {
+        ServletConfig config = getServletConfig();
+        String to = config.getInitParameter("to");
+        //String to = "amrita.arora.1192@gmail.com";
 
-        String to = "amrita.arora.1192@gmail.com";
-
-        String from = "sample.id1192@gmail.com";
+        String from = config.getInitParameter("from");
         String host = "smtp.gmail.com";
-        String pass = "Amrita@12345";
+        String pass = config.getInitParameter("password");
+
 
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
@@ -50,8 +53,11 @@ public class EmailServlet extends HttpServlet{
             // Set From: header field of the header.
             message.setFrom(new InternetAddress(from));
             // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress(to));
+            StringTokenizer st = new StringTokenizer(to, ",");
+            while (st.hasMoreElements()) {
+                message.addRecipient(Message.RecipientType.TO,
+                        new InternetAddress(st.nextToken()));
+            }
             // Set Subject: header field
             message.setSubject("This is the Subject Line!");
             // Now set the actual message
