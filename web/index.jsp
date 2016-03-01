@@ -16,5 +16,9 @@
   <form action="EmailServlet" method="GET">
       <input type="submit" value="SEND MAIL">
   </form>
+  <form action="FileUpload" method="post" enctype="multipart/form-data">
+      Select File:<input type="file" name="fname"/><br/>
+      <input type="submit" value="upload"/>
+  </form>
   </body>
 </html>
