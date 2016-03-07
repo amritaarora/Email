@@ -5,7 +5,7 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>EmailServlet</servlet-name>
         <servlet-class>EmailServlet</servlet-class>
         <init-param>
             <param-name>from</param-name>
@@ -22,19 +22,28 @@
     </servlet>
 
     <servlet>
-        <servlet-name>Servlet2</servlet-name>
+        <servlet-name>FileUpload</servlet-name>
         <servlet-class>FileUpload</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>FileDownload</servlet-name>
+        <servlet-class>FileDownload</servlet-class>
+    </servlet>
 
     <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>EmailServlet</servlet-name>
         <url-pattern>/EmailServlet</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>Servlet2</servlet-name>
+        <servlet-name>FileUpload</servlet-name>
         <url-pattern>/FileUpload</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FileDownload</servlet-name>
+        <url-pattern>/FileDownload</url-pattern>
     </servlet-mapping>
 
     <context-param>
