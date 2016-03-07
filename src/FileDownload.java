@@ -14,6 +14,8 @@ public class FileDownload extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String filename = "New.txt";
         String filepath = "C:\\Users\\AroraA\\New folder\\";
+
+
         response.setContentType("APPLICATION/OCTET-STREAM");
         response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
 

@@ -10,6 +10,9 @@
 <html>
   <head>
       <title>
+          <script>
+
+          </script>
 
       </title>
 
@@ -18,24 +21,25 @@
   <form action="EmailServlet" method="GET">
       <input type="submit" value="SEND MAIL">
   </form>
-  <form action="FileUpload" method="post" enctype="multipart/form-data">
+
+  <form action="BiometricServlet" method="post" enctype="multipart/form-data">
       <input type="file" name="biometricFile"/><br/>
-      <input type="submit" value="Upload Biometric Excel"/>
+      <input type="submit" value="Upload Biometric Excel" onchange="checkFileExists()"/>
   </form>
-  <!--
-  <form action="FileUpload" method="post" enctype="multipart/form-data">
+
+  <form action="SalesforceServlet" method="post" enctype="multipart/form-data">
       <input type="file" name="salesforceFile"/><br/>
       <input type="submit" value="Upload Salesforce Excel" />
   </form>
-  <form action="FileUpload" method="post" enctype="multipart/form-data">
-      <input type="file" name="emailFile"/><br/>
+  <form action="EmailListServlet" method="post" enctype="multipart/form-data">
+      <input type="file" name="emailListFile"/><br/>
       <input type="submit" value="Upload Email Excel" />
   </form>
-  <form action="FileUpload" method="post" enctype="multipart/form-data">
-      <input type="file" name="holidayFile"/><br/>
+  <form action="HolidayListServlet" method="post" enctype="multipart/form-data">
+      <input type="file" name="holidayListFile"/><br/>
       <input type="submit" value="Upload Holiday Excel" />
   </form>
-  -->
+
   <form action="FileDownload" method="get">
       <input type="submit" value="Generate Report">
   </form>

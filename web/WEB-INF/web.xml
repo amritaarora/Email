@@ -22,9 +22,25 @@
     </servlet>
 
     <servlet>
-        <servlet-name>FileUpload</servlet-name>
-        <servlet-class>FileUpload</servlet-class>
+        <servlet-name>BiometricServlet</servlet-name>
+        <servlet-class>BiometricServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>SalesforceServlet</servlet-name>
+        <servlet-class>SalesforceServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>EmailListServlet</servlet-name>
+        <servlet-class>EmailListServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>HolidayListServlet</servlet-name>
+        <servlet-class>HolidayListServlet</servlet-class>
+    </servlet>
+
 
     <servlet>
         <servlet-name>FileDownload</servlet-name>
@@ -37,14 +53,30 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>FileUpload</servlet-name>
-        <url-pattern>/FileUpload</url-pattern>
+        <servlet-name>BiometricServlet</servlet-name>
+        <url-pattern>/BiometricServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SalesforceServlet</servlet-name>
+        <url-pattern>/SalesforceServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>EmailListServlet</servlet-name>
+        <url-pattern>/EmailListServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HolidayListServlet</servlet-name>
+        <url-pattern>/HolidayListServlet</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>FileDownload</servlet-name>
         <url-pattern>/FileDownload</url-pattern>
     </servlet-mapping>
+
 
     <context-param>
         <description>Location to store uploaded file</description>

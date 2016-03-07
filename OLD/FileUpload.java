@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 public class FileUpload extends HttpServlet {
 
@@ -19,37 +20,39 @@ public class FileUpload extends HttpServlet {
 
         File upload = new File("C:\\Users\\AroraA\\New folder");
         response.setContentType("text/html");
-        /*
+        PrintWriter out = response.getWriter();
+        m = new MultipartRequest(request, upload.toString());
+/*
         biometricFile = m.getFilesystemName("biometricFile");
         salesforceFile = m.getFilesystemName("salesforceFile");
         emailFile = m.getFilesystemName("emailFile");
         holidayFile = m.getFilesystemName("holidayFile");
-*/
-        PrintWriter out = response.getWriter();
-        m = new MultipartRequest(request, upload.toString());
+
         String filename = m.getFilesystemName("biometricFile");
         out.println(filename);
         out.println("File Uploaded");
 
-        /*(Enumeration files = m.getFileNames();
+        Enumeration files = m.getFileNames();
         while (files.hasMoreElements()) {
             String name = (String) files.nextElement();
             String filename = m.getFilesystemName(name);
-            if(filename.equals(biometricFile))
+            if (filename.equals(biometricFile))
                 System.out.println("Biometric File");
-            else if(filename.equals(salesforceFile))
+            else if (filename.equals(salesforceFile))
                 System.out.println("Salesforce File");
-            else if(filename.equals(emailFile))
+            else if (filename.equals(emailFile))
                 System.out.println("Email File");
-            else if(filename.equals(holidayFile))
+            else if (filename.equals(holidayFile))
                 System.out.println("Holiday File");
 
 */
-            /*
+
             Enumeration files = m.getFileNames();
             while (files.hasMoreElements()) {
                 String name = (String) files.nextElement();
                 String filename = m.getFilesystemName(name);
+                out.println(filename+ "Successfully Uploaded");
+                /*
                 String type = m.getContentType(name);
                 File f = m.getFile(name);
                 out.println("name: " + name);
@@ -62,13 +65,12 @@ public class FileUpload extends HttpServlet {
                     out.println("f.length(): " + f.length());
                     out.println();
                 }
+                */
             }
-*/
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
-        requestDispatcher.include(request, response);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            requestDispatcher.include(request, response);
 
-    }
-
+        }
 
 }
