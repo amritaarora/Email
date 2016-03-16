@@ -16,8 +16,10 @@ import java.io.PrintWriter;
 @WebServlet(name = "BiometricServlet")
 public class BiometricServlet extends HttpServlet {
     MultipartRequest m;
+    String message;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         File biometricFilePath = new File("C:\\ProjectFiles\\Biometric");
         if (!biometricFilePath.exists()) {
@@ -25,13 +27,19 @@ public class BiometricServlet extends HttpServlet {
         }
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+
         m = new MultipartRequest(request, biometricFilePath.toString());
 
         String filename = m.getFilesystemName("biometricFile");
 
-        out.println(filename + "Successfully Uploaded");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+        //request.setAttribute("message", "Upload has been done successfully!");
+
+        response.sendRedirect("http://localhost:8080/Email_war_exploded/#/uploadBiometric");
+
+        /*
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/../uploadBiometric.jsp");
         requestDispatcher.include(request, response);
+    */
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
