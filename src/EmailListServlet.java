@@ -28,8 +28,12 @@ public class EmailListServlet extends HttpServlet {
 
         String filename = m.getFilesystemName("emailListFile");
         out.println(filename + "Successfully Uploaded");
+
+        response.sendRedirect("http://localhost:8080/Email_war_exploded/#/uploadEmailList");
+        /*
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
         requestDispatcher.include(request, response);
+        */
 
 
     }

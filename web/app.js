@@ -21,6 +21,15 @@ sampleApp.config(['$routeProvider',
         }).when('/uploadBiometric', {
             templateUrl: 'uploadBiometric.jsp',
             controller: 'uploadBiometricController'
+        }).when('/uploadHrnet', {
+            templateUrl: 'uploadHrnet.jsp',
+            controller: 'uploadHrnetController'
+        }).when('/uploadEmailList', {
+            templateUrl: 'uploadEmailList.jsp',
+            controller: 'uploadEmailListController'
+        }).when('/uploadHoliday', {
+            templateUrl: 'uploadHoliday.jsp',
+            controller: 'uploadHolidayController'
         }).otherwise({
             redirectTo: '/index.html'
         });
@@ -114,5 +123,10 @@ sampleApp.controller("uploadBiometricController", function ($scope, $http) {
      };
      */
 });
-
+sampleApp.controller("uploadHrnetController", function ($scope, $http) {
+});
+sampleApp.controller("uploadEmailListController", function ($scope, $http) {
+});
+sampleApp.controller("uploadHolidayController", function ($scope, $http) {
+});
 

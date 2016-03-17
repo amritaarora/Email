@@ -39,7 +39,7 @@ public class BiometricServlet extends HttpServlet {
         /*
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/../uploadBiometric.jsp");
         requestDispatcher.include(request, response);
-    */
+        */
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

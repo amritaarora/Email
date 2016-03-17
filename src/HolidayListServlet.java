@@ -28,8 +28,12 @@ public class HolidayListServlet extends HttpServlet {
 
         String filename = m.getFilesystemName("holidayListFile");
         out.println(filename + "Successfully Uploaded");
+
+        response.sendRedirect("http://localhost:8080/Email_war_exploded/#/uploadHoliday");
+        /*
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
         requestDispatcher.include(request, response);
+        */
 
 
     }
